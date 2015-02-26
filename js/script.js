@@ -11,10 +11,13 @@ Functions Assignment
     var lottery;                //stores the user's choice of which lottery to draw
     var numbers = [];           //an array to capture the numbers
     var counter = 0;            //a counting variable
-
+    var max;                    //max number for the functions
+    var min;                    //min number for the functions
 
 //Functions
-    function numberGenerator() {}
+    function numberGenerator(x, n) {
+        return Math.round(n + (Math.random() * (x - n)));
+    }
 
 
 //Main body
@@ -30,20 +33,46 @@ Functions Assignment
         lottery = prompt("Please type (F) for Florida State Lottery, or (P) for Powerball.");
     }
 
-    if (lottery === "F") {                         //determine whether user selected F or not
-        while (counter < 6) {                      //as long as counter is less than 6,
-            numbers[counter] = numberGenerator;    //numbers the array, each slot is loaded with random number from function
+    //Florida State Lottery
+    if (lottery === "F") {                          //determine whether user selected F or not
+        max = 53;                                   //set the maximum for each number
+        min = 1;                                    //set the minimum for each number
+        counter = 0;
+        while (counter < 6) {                       //as long as counter is less than 6,
+            numbers[counter] = numberGenerator(max, min);     //numbers the array, each slot is loaded with random number from function
+            counter++;
 
-            counter++;                             //increase counter
-        }                                          //restart while loop, or if fulfilled, continue on below
-        console.log("Your potentially winning Florida State Lottery Numbers Are:\n");
-        counter = 0;                               //reset counter
-        for (counter < 6; counter++;) {            //for loop to display each numbers array
-            console.log(numbers[counter]);         //display array
+
+        }
+    console.log("Your potentially winning Florida State Lottery Numbers Are:");
+    console.log(numbers[0] + ", " + numbers[1] + ", " + numbers[2] + ", " + numbers[3] + ", " + numbers[4] + ", and " + numbers[5]);
+    } else {
+        max = 59;
+        min = 1;
+        counter = 0;
+        while (counter < 5) {
+            numbers[counter] = numberGenerator(max, min);
+            counter++;
         }
 
+        //generate a powerball number
+        max = 35;
+        min = 1;
+
+        numbers[5] = numberGenerator(max, min);
+
+
+     //display
+        console.log("Your potentially winning Powerball Numbers Are:");
+        console.log(numbers[0] + ", " + numbers[1] + ", " + numbers[2] + ", " + numbers[3] + ", " + numbers[4] + ", and the Powerball is " + numbers[5]);
 
     }
+
+
+
+
+
+
 
 
 
