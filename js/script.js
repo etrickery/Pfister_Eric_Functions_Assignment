@@ -8,7 +8,8 @@ Functions Assignment
  */
 
 //Variables
-    var lottery;
+    var lottery;        //stores the user's choice of which lottery to draw
+    var numbers[0, 1, 2, 3, 4, 5];        //an array to capture the numbers
 
 
 //Functions
@@ -28,7 +29,9 @@ Functions Assignment
         lottery = prompt("Please type (F) for Florida State Lottery, or (P) for Powerball.");
     }
 
-
+    if (lottery === "F") {
+        numbers = FloStaLotto();
+    }
 
 
 
