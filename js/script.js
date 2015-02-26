@@ -8,12 +8,13 @@ Functions Assignment
  */
 
 //Variables
-    var lottery;        //stores the user's choice of which lottery to draw
-    var numbers[0, 1, 2, 3, 4, 5];        //an array to capture the numbers
+    var lottery;            //stores the user's choice of which lottery to draw
+    var numbers = [];          //an array to capture the numbers
+    var counter = 0;            //a counting variable
 
 
 //Functions
-
+    function numberGenerator() {}
 
 
 //Main body
@@ -30,7 +31,18 @@ Functions Assignment
     }
 
     if (lottery === "F") {
-        numbers = FloStaLotto();
+        while (counter < 6) {
+            numbers[counter] = numberGenerator;
+
+            counter++;
+        }
+        console.log("Your potentially winning Florida State Lottery Numbers Are:\n");
+        counter = 0;
+        for (counter < 6; counter++); {
+            console.log(numbers[counter]);
+        }
+
+
     }
 
 
