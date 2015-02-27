@@ -41,25 +41,27 @@ Functions Assignment
         while (counter < 6) {                       //as long as counter is less than 6,
             numbers[counter] = numberGenerator(max, min);     //numbers the array, each slot is loaded with random number from function
             counter++;
-
-
         }
-    console.log("Your potentially winning Florida State Lottery Numbers Are:");
-    console.log(numbers[0] + ", " + numbers[1] + ", " + numbers[2] + ", " + numbers[3] + ", " + numbers[4] + ", and " + numbers[5]);
+
+        console.log("Your potentially winning Florida State Lottery Numbers Are:"); //display numbers
+        console.log(numbers[0] + ", " + numbers[1] + ", " + numbers[2] + ", " + numbers[3] + ", " + numbers[4] + ", and " + numbers[5]);
+
+
+    //Powerball lottery
     } else {
-        max = 59;
-        min = 1;
-        counter = 0;
-        while (counter < 5) {
-            numbers[counter] = numberGenerator(max, min);
-            counter++;
+        max = 59;                                   //set the maximum value of each number
+        min = 1;                                    //set the minimum value
+        counter = 0;                                //reset the counter
+        while (counter < 5) {                       //while loop to fill each slot of the array
+            numbers[counter] = numberGenerator(max, min);   //function call to fill array
+            counter++;                              //increase counter one increment
         }
 
         //generate a powerball number
-        max = 35;
-        min = 1;
+        max = 35;                                   //max value for powerball
+        min = 1;                                    //minimum powerball
 
-        numbers[5] = numberGenerator(max, min);
+        numbers[5] = numberGenerator(max, min);     //generate powerball
 
 
      //display
